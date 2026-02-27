@@ -1,4 +1,4 @@
-import localQuotes from "../config/quotes.json"
+import localQuotes from "../../config/quotes.json"
 
 export const prerender = false
 

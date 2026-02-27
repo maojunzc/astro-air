@@ -8,6 +8,7 @@ import expressiveCode from "astro-expressive-code"
 import { defineConfig } from "astro/config"
 
 import robotsTxt from "astro-robots-txt"
+import netlify from "@astrojs/netlify"
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  adapter: netlify(),
   integrations: [
     react(),
     sitemap(),
