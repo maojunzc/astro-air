@@ -5,22 +5,25 @@ import { getLangFromUrl, useTranslations } from "~/i18n/utils"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const { home, archive, custom, links, reading, plugins, about } = lang === "zh" ? zh.navigation : en.navigation
+const { home, archive, custom, links, reading, plugins, about } =
+  lang === "zh" ? zh.navigation : en.navigation
 ---
 
-<div class="mb-10 mt-4">
-  <nav class="flex gap-2 md:gap-6 overflow-x-auto whitespace-nowrap text-lg [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+<div class="mt-4 mb-10">
+  <nav
+    class="flex gap-2 overflow-x-auto text-lg whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] md:gap-6 [&::-webkit-scrollbar]:hidden"
+  >
     {
       home && (
         <a
           href={`/${lang}`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.home")}
           title={t("nav.home")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.home")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }
@@ -28,13 +31,13 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       archive && (
         <a
           href={`/${lang}/archive`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.archive")}
           title={t("nav.archive")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.archive")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }
@@ -42,14 +45,14 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       custom?.map((tab) => (
         <a
           href={tab.link}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           target="_blank"
           aria-label={tab.label}
           title={tab.label}
           data-astro-prefetch="viewport"
         >
           <p>{tab.label}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       ))
     }
@@ -57,13 +60,13 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       links && (
         <a
           href={`/${lang}/links`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.links")}
           title={t("nav.links")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.links")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }
@@ -71,13 +74,13 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       reading && (
         <a
           href={`/${lang}/reading`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.reading")}
           title={t("nav.reading")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.reading")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }
@@ -85,13 +88,13 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       plugins && (
         <a
           href={`/${lang}/plugins`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.plugins")}
           title={t("nav.plugins")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.plugins")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }
@@ -99,13 +102,13 @@ const { home, archive, custom, links, reading, plugins, about } = lang === "zh" 
       about && (
         <a
           href={`/${lang}/about`}
-          class="px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative group"
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={t("nav.about")}
           title={t("nav.about")}
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.about")}</p>
-          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
     }

@@ -30,9 +30,9 @@ const pageMeta = lang === "zh" ? zh.pageMeta : en.pageMeta
   <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
     {links.map((link) => <LinkCard {...link} />)}
   </div>
-  <div class="prose max-w-3xl dark:prose-invert">
+  <div class="prose dark:prose-invert max-w-3xl">
     <LinksContent />
   </div>
-  
+
   <Guestbook lang={lang} />
 </MainLayout>

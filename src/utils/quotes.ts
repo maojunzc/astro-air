@@ -1,4 +1,4 @@
-import localQuotes from './quotes.json'
+import localQuotes from "./quotes.json"
 
 interface Quote {
   text: string
@@ -14,64 +14,65 @@ interface QuoteResult {
 
 const API_ENDPOINTS = [
   {
-    name: 'hitokoto',
-    url: 'https://v1.hitokoto.cn/',
+    name: "hitokoto",
+    url: "https://v1.hitokoto.cn/",
     parse: (data: any): Quote => ({
       text: data.hitokoto,
-      author: data.from_who || data.from || 'Unknown'
-    })
+      author: data.from_who || data.from || "Unknown",
+    }),
   },
   {
-    name: 'jinrishici',
-    url: 'https://v2.jinrishici.com/info.json',
+    name: "jinrishici",
+    url: "https://v2.jinrishici.com/info.json",
     parse: (data: any): Quote => ({
       text: data.data.content,
-      author: data.data.author || 'Unknown'
-    })
+      author: data.data.author || "Unknown",
+    }),
   },
   {
-    name: 'simor',
-    url: 'https://api.shadiao.pro/du',
+    name: "simor",
+    url: "https://api.shadiao.pro/du",
     parse: (data: any): Quote => ({
       text: data.text,
-      author: data.from || 'Unknown'
-    })
+      author: data.from || "Unknown",
+    }),
   },
   {
-    name: ' mush',
-    url: 'https://api.muxiaoguo.cn/api/yiyan',
+    name: " mush",
+    url: "https://api.muxiaoguo.cn/api/yiyan",
     parse: (data: any): Quote => ({
       text: data.data.content,
-      author: data.data.author || 'Unknown'
-    })
+      author: data.data.author || "Unknown",
+    }),
   },
   {
-    name: 'tianapi',
-    url: 'https://api.tianapi.com/caiyun/index',
+    name: "tianapi",
+    url: "https://api.tianapi.com/caiyun/index",
     parse: (data: any): Quote => ({
-      text: data.newslist[0]?.content || '',
-      author: data.newslist[0]?.source || 'Unknown'
-    })
+      text: data.newslist[0]?.content || "",
+      author: data.newslist[0]?.source || "Unknown",
+    }),
   },
   {
-    name: 'lbx',
-    url: 'https://lbx.xiaoxiao-dashu.com/api/yiyan',
+    name: "lbx",
+    url: "https://lbx.xiaoxiao-dashu.com/api/yiyan",
     parse: (data: any): Quote => ({
       text: data.data.text,
-      author: data.data.author || 'Unknown'
-    })
-  }
+      author: data.data.author || "Unknown",
+    }),
+  },
 ]
 
 export async function getQuote(): Promise<QuoteResult> {
   // 首先尝试从本地配置文件中获取
   if (localQuotes && localQuotes.length > 0) {
-    const randomLocalQuote = localQuotes[Math.floor(Math.random() * localQuotes.length)]
+    const randomLocalQuote =
+      localQuotes[Math.floor(Math.random() * localQuotes.length)]
     return {
       text: randomLocalQuote.text,
-      author: randomLocalQuote.author || 'Unknown',
-      source: 'local',
-      isLocal: true
+      author: randomLocalQuote.author || "Unknown",
+      source: "local",
+      isLocal: true,
     }
   }
 
@@ -91,8 +92,8 @@ export async function fetchFromAPIs(): Promise<QuoteResult> {
       const response = await fetch(api.url, {
         signal: controller.signal,
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       })
 
       clearTimeout(timeoutId)
@@ -107,7 +108,7 @@ export async function fetchFromAPIs(): Promise<QuoteResult> {
           text: quote.text,
           author: quote.author,
           source: api.name,
-          isLocal: false
+          isLocal: false,
         }
       }
     } catch (error) {
@@ -118,10 +119,10 @@ export async function fetchFromAPIs(): Promise<QuoteResult> {
 
   // 所有API都失败，返回默认一言
   return {
-    text: '多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。',
-    author: 'maojunzc',
-    source: 'default',
-    isLocal: false
+    text: "多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。",
+    author: "maojunzc",
+    source: "default",
+    isLocal: false,
   }
 }
 
