@@ -21,30 +21,37 @@ export const POST: APIRoute = async ({ request }) => {
     const displayEmail = email || "未知"
 
     // 配置邮件发送
-    const transporter = nodemailer.createTransporter({
-      service: "qq",
-      auth: {
-        user: "2316562571@qq.com",
-        pass: process.env.QQ_EMAIL_PASSWORD,
-      },
-    })
+    if (process.env.QQ_EMAIL_PASSWORD) {
+      try {
+        const transporter = nodemailer.createTransporter({
+          service: "qq",
+          auth: {
+            user: "2316562571@qq.com",
+            pass: process.env.QQ_EMAIL_PASSWORD,
+          },
+        })
 
-    const mailOptions = {
-      from: "2316562571@qq.com",
-      to: "2316562571@qq.com",
-      subject: `新留言 - ${displayName}`,
-      html: `
-        <h2>新留言</h2>
-        <p><strong>昵称:</strong> ${displayName}</p>
-        <p><strong>邮箱:</strong> ${displayEmail}</p>
-        ${website ? `<p><strong>网址:</strong> ${website}</p>` : ""}
-        <p><strong>留言内容:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
-        <p><em>此邮件由网站自动发送</em></p>
-      `,
+        const mailOptions = {
+          from: "2316562571@qq.com",
+          to: "2316562571@qq.com",
+          subject: `新留言 - ${displayName}`,
+          html: `
+            <h2>新留言</h2>
+            <p><strong>昵称:</strong> ${displayName}</p>
+            <p><strong>邮箱:</strong> ${displayEmail}</p>
+            ${website ? `<p><strong>网址:</strong> ${website}</p>` : ""}
+            <p><strong>留言内容:</strong></p>
+            <p>${message.replace(/\n/g, "<br>")}</p>
+            <p><em>此邮件由网站自动发送</em></p>
+          `,
+        }
+
+        await transporter.sendMail(mailOptions)
+      } catch (emailError) {
+        console.error("邮件发送失败:", emailError)
+        // 邮件发送失败不影响留言提交
+      }
     }
-
-    await transporter.sendMail(mailOptions)
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
