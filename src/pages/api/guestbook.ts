@@ -9,12 +9,16 @@ export const POST: APIRoute = async ({ request }) => {
     const website = formData.get("website") as string
     const message = formData.get("message") as string
 
-    if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "请填写必填字段" }), {
+    if (!message) {
+      return new Response(JSON.stringify({ error: "请填写留言内容" }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
       })
     }
+
+    // 如果没有提供姓名，使用默认值
+    const displayName = name || "匿名"
+    const displayEmail = email || "未知"
 
     // 配置邮件发送
     const transporter = nodemailer.createTransporter({
@@ -28,11 +32,11 @@ export const POST: APIRoute = async ({ request }) => {
     const mailOptions = {
       from: "2316562571@qq.com",
       to: "2316562571@qq.com",
-      subject: `新留言 - ${name}`,
+      subject: `新留言 - ${displayName}`,
       html: `
         <h2>新留言</h2>
-        <p><strong>昵称:</strong> ${name}</p>
-        <p><strong>邮箱:</strong> ${email}</p>
+        <p><strong>昵称:</strong> ${displayName}</p>
+        <p><strong>邮箱:</strong> ${displayEmail}</p>
         ${website ? `<p><strong>网址:</strong> ${website}</p>` : ""}
         <p><strong>留言内容:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>

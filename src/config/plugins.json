@@ -1,19 +1,113 @@
 [
   {
+    "name": "@astrojs/react",
+    "author": "Astro Team",
+    "description": "Astro的官方React集成，用于在Astro项目中使用React组件。",
+    "descriptionEn": "Astro's official React integration for using React components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/react",
+    "npm": "https://www.npmjs.com/package/@astrojs/react",
+    "category": "前端框架",
+    "installed": true
+  },
+  {
+    "name": "@astrojs/vue",
+    "author": "Astro Team",
+    "description": "Astro的官方Vue集成，用于在Astro项目中使用Vue组件。",
+    "descriptionEn": "Astro's official Vue integration for using Vue components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/vue",
+    "npm": "https://www.npmjs.com/package/@astrojs/vue",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/svelte",
+    "author": "Astro Team",
+    "description": "Astro的官方Svelte集成，用于在Astro项目中使用Svelte组件。",
+    "descriptionEn": "Astro's official Svelte integration for using Svelte components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/svelte",
+    "npm": "https://www.npmjs.com/package/@astrojs/svelte",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/solid-js",
+    "author": "Astro Team",
+    "description": "Astro的官方Solid.js集成，用于在Astro项目中使用Solid.js组件。",
+    "descriptionEn": "Astro's official Solid.js integration for using Solid.js components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/solid-js",
+    "npm": "https://www.npmjs.com/package/@astrojs/solid-js",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/preact",
+    "author": "Astro Team",
+    "description": "Astro的官方Preact集成，用于在Astro项目中使用Preact组件。",
+    "descriptionEn": "Astro's official Preact integration for using Preact components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/preact",
+    "npm": "https://www.npmjs.com/package/@astrojs/preact",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/alpinejs",
+    "author": "Astro Team",
+    "description": "Astro的官方Alpine.js集成，用于在Astro项目中使用Alpine.js。",
+    "descriptionEn": "Astro's official Alpine.js integration for using Alpine.js in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/alpinejs",
+    "npm": "https://www.npmjs.com/package/@astrojs/alpinejs",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/netlify",
+    "author": "Astro Team",
+    "description": "Astro的官方Netlify适配器，用于在Netlify上部署Astro项目。",
+    "descriptionEn": "Astro's official Netlify adapter for deploying Astro projects on Netlify.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/netlify",
+    "npm": "https://www.npmjs.com/package/@astrojs/netlify",
+    "category": "适配器",
+    "installed": true
+  },
+  {
+    "name": "@astrojs/vercel",
+    "author": "Astro Team",
+    "description": "Astro的官方Vercel适配器，用于在Vercel上部署Astro项目。",
+    "descriptionEn": "Astro's official Vercel adapter for deploying Astro projects on Vercel.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/vercel",
+    "npm": "https://www.npmjs.com/package/@astrojs/vercel",
+    "category": "适配器",
+    "installed": true
+  },
+  {
+    "name": "@astrojs/cloudflare",
+    "author": "Astro Team",
+    "description": "Astro的官方Cloudflare适配器，用于在Cloudflare上部署Astro项目。",
+    "descriptionEn": "Astro's official Cloudflare adapter for deploying Astro projects on Cloudflare.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/cloudflare",
+    "npm": "https://www.npmjs.com/package/@astrojs/cloudflare",
+    "category": "适配器",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/node",
+    "author": "Astro Team",
+    "description": "Astro的官方Node.js适配器，用于在Node.js环境中部署Astro项目。",
+    "descriptionEn": "Astro's official Node.js adapter for deploying Astro projects in Node.js environments.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/node",
+    "npm": "https://www.npmjs.com/package/@astrojs/node",
+    "category": "适配器",
+    "installed": false
+  },
+  {
     "name": "@astrojs/mdx",
     "author": "Astro Team",
     "description": "Astro的官方MDX集成，用于在Astro项目中使用MDX格式。",
     "descriptionEn": "Astro's official MDX integration for using MDX format in Astro projects.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/mdx",
-    "npm": "https://www.npmjs.com/package/@astrojs/mdx"
-  },
-  {
-    "name": "@astrojs/rss",
-    "author": "Astro Team",
-    "description": "Astro的官方RSS插件，用于生成网站的RSS订阅源。",
-    "descriptionEn": "Astro's official RSS plugin for generating RSS feeds for websites.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/rss",
-    "npm": "https://www.npmjs.com/package/@astrojs/rss"
+    "npm": "https://www.npmjs.com/package/@astrojs/mdx",
+    "category": "其他集成",
+    "installed": true
   },
   {
     "name": "@astrojs/sitemap",
@@ -21,7 +115,49 @@
     "description": "Astro的官方站点地图插件，用于生成网站的XML站点地图。",
     "descriptionEn": "Astro's official sitemap plugin for generating XML sitemaps for websites.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/sitemap",
-    "npm": "https://www.npmjs.com/package/@astrojs/sitemap"
+    "npm": "https://www.npmjs.com/package/@astrojs/sitemap",
+    "category": "其他集成",
+    "installed": true
+  },
+  {
+    "name": "@astrojs/partytown",
+    "author": "Astro Team",
+    "description": "Astro的官方Partytown集成，用于在Web Worker中运行第三方脚本。",
+    "descriptionEn": "Astro's official Partytown integration for running third-party scripts in Web Workers.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/partytown",
+    "npm": "https://www.npmjs.com/package/@astrojs/partytown",
+    "category": "其他集成",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/markdoc",
+    "author": "Astro Team",
+    "description": "Astro的官方Markdoc集成，用于在Astro项目中使用Markdoc格式。",
+    "descriptionEn": "Astro's official Markdoc integration for using Markdoc format in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/markdoc",
+    "npm": "https://www.npmjs.com/package/@astrojs/markdoc",
+    "category": "其他集成",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/db",
+    "author": "Astro Team",
+    "description": "Astro的官方数据库集成，用于在Astro项目中使用数据库。",
+    "descriptionEn": "Astro's official database integration for using databases in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/db",
+    "npm": "https://www.npmjs.com/package/@astrojs/db",
+    "category": "其他集成",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/rss",
+    "author": "Astro Team",
+    "description": "Astro的官方RSS插件，用于生成网站的RSS订阅源。",
+    "descriptionEn": "Astro's official RSS plugin for generating RSS feeds for websites.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/rss",
+    "npm": "https://www.npmjs.com/package/@astrojs/rss",
+    "category": "其他集成",
+    "installed": true
   },
   {
     "name": "astro-reading-time",
@@ -29,31 +165,9 @@
     "description": "计算文章阅读时间的Astro插件。",
     "descriptionEn": "Astro plugin for calculating article reading time.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/reading-time",
-    "npm": "https://www.npmjs.com/package/astro-reading-time"
-  },
-  {
-    "name": "astro-post-excerpt",
-    "author": "Astro Community",
-    "description": "为Astro博客文章生成摘要的插件。",
-    "descriptionEn": "Astro plugin for generating excerpts for blog posts.",
-    "github": "https://github.com/astro-community/astro-post-excerpt",
-    "npm": "https://www.npmjs.com/package/astro-post-excerpt"
-  },
-  {
-    "name": "astro-toc",
-    "author": "Astro Community",
-    "description": "为Astro文章生成目录的插件。",
-    "descriptionEn": "Astro plugin for generating table of contents for articles.",
-    "github": "https://github.com/astro-community/astro-toc",
-    "npm": "https://www.npmjs.com/package/astro-toc"
-  },
-  {
-    "name": "astro-seo-metadata",
-    "author": "Astro Community",
-    "description": "为Astro网站添加SEO元数据的插件。",
-    "descriptionEn": "Astro plugin for adding SEO metadata to websites.",
-    "github": "https://github.com/astro-community/astro-seo-metadata",
-    "npm": "https://www.npmjs.com/package/astro-seo-metadata"
+    "npm": "https://www.npmjs.com/package/astro-reading-time",
+    "category": "社区插件",
+    "installed": false
   },
   {
     "name": "astro-expressive-code",
@@ -61,23 +175,9 @@
     "description": "为Astro网站提供增强的代码块展示功能。",
     "descriptionEn": "Astro plugin for enhanced code block display.",
     "github": "https://github.com/astro-community/astro-expressive-code",
-    "npm": "https://www.npmjs.com/package/astro-expressive-code"
-  },
-  {
-    "name": "super-tips",
-    "author": "Astro Community",
-    "description": "为Astro网站添加提示和技巧的插件。",
-    "descriptionEn": "Astro plugin for adding tips and tricks to websites.",
-    "github": "https://github.com/astro-community/super-tips",
-    "npm": "https://www.npmjs.com/package/super-tips"
-  },
-  {
-    "name": "@jam-comments/astro",
-    "author": "Jam Comments",
-    "description": "为Astro网站添加评论功能的插件。",
-    "descriptionEn": "Astro plugin for adding comment functionality to websites.",
-    "github": "https://github.com/jam-comments/jam-comments",
-    "npm": "https://www.npmjs.com/package/@jam-comments/astro"
+    "npm": "https://www.npmjs.com/package/astro-expressive-code",
+    "category": "社区插件",
+    "installed": true
   },
   {
     "name": "astro-embed",
@@ -85,31 +185,9 @@
     "description": "为Astro网站嵌入各种媒体内容的插件。",
     "descriptionEn": "Astro plugin for embedding various media content.",
     "github": "https://github.com/astro-community/astro-embed",
-    "npm": "https://www.npmjs.com/package/astro-embed"
-  },
-  {
-    "name": "astro-critical-css",
-    "author": "Astro Community",
-    "description": "为Astro网站生成关键CSS的插件，提高页面加载速度。",
-    "descriptionEn": "Astro plugin for generating critical CSS to improve page load speed.",
-    "github": "https://github.com/astro-community/astro-critical-css",
-    "npm": "https://www.npmjs.com/package/astro-critical-css"
-  },
-  {
-    "name": "astro-html-minifier-next",
-    "author": "Astro Community",
-    "description": "为Astro网站压缩HTML的插件。",
-    "descriptionEn": "Astro plugin for minifying HTML.",
-    "github": "https://github.com/astro-community/astro-html-minifier-next",
-    "npm": "https://www.npmjs.com/package/astro-html-minifier-next"
-  },
-  {
-    "name": "@itsmatteomanf/astro-pagefind",
-    "author": "Matteo Manfredi",
-    "description": "为Astro网站添加搜索功能的插件。",
-    "descriptionEn": "Astro plugin for adding search functionality to websites.",
-    "github": "https://github.com/itsmatteomanf/astro-pagefind",
-    "npm": "https://www.npmjs.com/package/@itsmatteomanf/astro-pagefind"
+    "npm": "https://www.npmjs.com/package/astro-embed",
+    "category": "社区插件",
+    "installed": false
   },
   {
     "name": "astro-icon",
@@ -117,14 +195,38 @@
     "description": "为Astro网站添加图标支持的插件。",
     "descriptionEn": "Astro plugin for adding icon support to websites.",
     "github": "https://github.com/astro-community/astro-icon",
-    "npm": "https://www.npmjs.com/package/astro-icon"
+    "npm": "https://www.npmjs.com/package/astro-icon",
+    "category": "社区插件",
+    "installed": false
   },
   {
-    "name": "@jcayzac/astro-image-service-ng",
-    "author": "Jean-Christophe Cayzac",
-    "description": "Astro的下一代图片服务插件。",
-    "descriptionEn": "Next-generation image service plugin for Astro.",
-    "github": "https://github.com/jcayzac/astro-image-service-ng",
-    "npm": "https://www.npmjs.com/package/@jcayzac/astro-image-service-ng"
+    "name": "astro-google-analytics",
+    "author": "Astro Community",
+    "description": "为Astro网站添加Google Analytics跟踪。",
+    "descriptionEn": "Astro plugin for adding Google Analytics tracking to websites.",
+    "github": "https://github.com/astro-community/astro-google-analytics",
+    "npm": "https://www.npmjs.com/package/astro-google-analytics",
+    "category": "社区插件",
+    "installed": true
+  },
+  {
+    "name": "astro-og-canvas",
+    "author": "Astro Community",
+    "description": "为Astro网站生成Open Graph图像。",
+    "descriptionEn": "Astro plugin for generating Open Graph images for websites.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/og-canvas",
+    "npm": "https://www.npmjs.com/package/astro-og-canvas",
+    "category": "社区插件",
+    "installed": true
+  },
+  {
+    "name": "astro-robots-txt",
+    "author": "Astro Community",
+    "description": "为Astro网站生成robots.txt文件。",
+    "descriptionEn": "Astro plugin for generating robots.txt files for websites.",
+    "github": "https://github.com/astro-community/astro-robots-txt",
+    "npm": "https://www.npmjs.com/package/astro-robots-txt",
+    "category": "社区插件",
+    "installed": true
   }
 ]

@@ -23,11 +23,10 @@ const isChinese = lang === "zh"
             type="text"
             id="name"
             name="name"
-            required
             class="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
             placeholder={isChinese
-              ? "请输入您的昵称"
-              : "Please enter your name"}
+              ? "请输入您的昵称 (选填)"
+              : "Please enter your name (optional)"}
           />
         </div>
         <div>
@@ -41,11 +40,10 @@ const isChinese = lang === "zh"
             type="email"
             id="email"
             name="email"
-            required
             class="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
             placeholder={isChinese
-              ? "请输入您的邮箱"
-              : "Please enter your email"}
+              ? "请输入您的邮箱 (选填)"
+              : "Please enter your email (optional)"}
           />
         </div>
         <div>

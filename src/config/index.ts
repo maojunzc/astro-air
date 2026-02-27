@@ -24,6 +24,7 @@ export const common = {
     links: true,
     reading: true,
     plugins: true,
+    tools: true,
     about: true,
   },
   latestPosts: 8,
@@ -75,6 +76,11 @@ export const zh = {
       description: "maojunzc的Astro博客插件",
       ogImage: "/images/page-meta/zh/plugins.png",
     },
+    tools: {
+      title: "工具",
+      description: "实用工具集合",
+      ogImage: "/images/page-meta/zh/tools.png",
+    },
   },
 }
 
@@ -115,6 +121,11 @@ export const en = {
       title: "Plugins",
       description: "maojunzc's Astro blog plugins",
       ogImage: "/images/page-meta/en/plugins.png",
+    },
+    tools: {
+      title: "Tools",
+      description: "Useful tools collection",
+      ogImage: "/images/page-meta/en/tools.png",
     },
   },
 }

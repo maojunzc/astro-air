@@ -5,7 +5,7 @@ import { getLangFromUrl, useTranslations } from "~/i18n/utils"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const { home, archive, custom, links, reading, plugins, about } =
+const { home, archive, custom, links, reading, plugins, tools, about } =
   lang === "zh" ? zh.navigation : en.navigation
 ---
 
@@ -94,6 +94,20 @@ const { home, archive, custom, links, reading, plugins, about } =
           data-astro-prefetch="viewport"
         >
           <p>{t("nav.plugins")}</p>
+          <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
+        </a>
+      )
+    }
+    {
+      tools && (
+        <a
+          href={`/${lang}/tools`}
+          class="group relative rounded-md px-4 py-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+          aria-label={t("nav.tools")}
+          title={t("nav.tools")}
+          data-astro-prefetch="viewport"
+        >
+          <p>{t("nav.tools")}</p>
           <span class="absolute right-0 bottom-0 left-0 h-0.5 origin-left scale-x-0 bg-blue-500 transition-transform group-hover:scale-x-100" />
         </a>
       )
