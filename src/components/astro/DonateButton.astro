@@ -1,0 +1,61 @@
+---
+const { lang = 'zh' } = Astro.props;
+const isChinese = lang === 'zh';
+---
+
+<div class="flex justify-center my-10">
+  <button 
+    class="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-md hover:from-blue-700 hover:to-blue-900 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+    onclick="document.getElementById('donate-modal').classList.remove('hidden')"
+  >
+    {isChinese ? '捐赠' : 'Donate'}
+  </button>
+</div>
+
+<!-- 捐赠模态框 -->
+<div id="donate-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 hidden">
+  <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-2xl w-full relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-green-500"></div>
+    <button 
+      class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      onclick="document.getElementById('donate-modal').classList.add('hidden')"
+    >
+      ×
+    </button>
+    <h3 class="text-2xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400 pt-10 px-6">
+      {isChinese ? '请我喝杯咖啡吧~' : 'Buy me a coffee~'}
+    </h3>
+    <div class="flex flex-col md:flex-row gap-8 justify-center px-6 pb-10">
+      <div class="text-center bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
+        <img src="/images/alipay-qr.jpg" alt={isChinese ? '支付宝收款码' : 'Alipay QR Code'} class="w-40 h-40 object-contain rounded mb-3" />
+        <p class="text-lg font-medium text-gray-800 dark:text-gray-200">{isChinese ? '支付宝' : 'Alipay'}</p>
+      </div>
+      <div class="text-center bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
+        <img src="/images/wechat-qr.jpg" alt={isChinese ? '微信收款码' : 'WeChat QR Code'} class="w-40 h-40 object-contain rounded mb-3" />
+        <p class="text-lg font-medium text-gray-800 dark:text-gray-200">{isChinese ? '微信' : 'WeChat'}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 点击模态框外部关闭
+  document.addEventListener('DOMContentLoaded', function() {
+    const donateModal = document.getElementById('donate-modal');
+    if (donateModal) {
+      // 点击模态框背景关闭
+      donateModal.addEventListener('click', function(e) {
+        if (e.target === donateModal) {
+          donateModal.classList.add('hidden');
+        }
+      });
+      
+      // 点击ESC键关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !donateModal.classList.contains('hidden')) {
+          donateModal.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>

@@ -11,9 +11,9 @@ import robotsTxt from "astro-robots-txt"
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static",
+  output: "server",
   prefetch: true,
-  site: "https://astro-air.guoqi.dev",
+  site: "https://maojunzc.github.io",
   vite: {
     plugins: [tailwindcss()],
   },

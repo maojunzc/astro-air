@@ -10,8 +10,8 @@ A minimalism, personal blog theme for Astro.
 
 ## Showcase
 
-- [Astro Air](https://astro-air.guoqi.dev)
-- [Guoqi's blog](https://blog.sunguoqi.com)
+- [Astro Air](https://maojunzc.github.io)
+- [maojunzc's blog](https://maojunzc.github.io)
 - ...
 
 > welcome to add your own blog to the list ❤️

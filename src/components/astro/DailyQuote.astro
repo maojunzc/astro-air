@@ -1,0 +1,116 @@
+---
+const { lang = 'zh' } = Astro.props;
+const isChinese = lang === 'zh';
+---
+
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-400">{isChinese ? '每日一言' : 'Daily Quote'}</h3>
+    <span class="text-sm text-gray-500 dark:text-gray-400" id="quote-date"></span>
+  </div>
+  <div class="text-center py-6">
+    <p class="text-xl italic text-gray-800 dark:text-gray-200 mb-4" id="daily-quote">
+      {isChinese ? '多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。' : 'Years ago, smiles became secrets. I heard someone once cried, watching streetlights turn on and off.'}
+    </p>
+    <p class="text-right text-gray-600 dark:text-gray-400" id="quote-author">— {isChinese ? 'maojunzc' : 'maojunzc'}</p>
+  </div>
+</div>
+
+<script>
+  // 备用一言数据（当所有API都失败时使用）
+  const fallbackQuotes = [
+    { text: "多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。", author: "maojunzc" },
+    { text: "有些礼物，收下就没办法还了。发生过的，永远停在那里。", author: "maojunzc" },
+    { text: "人前一杯酒，各自说说笑话。人后一片海，独自翻翻夜晚。", author: "maojunzc" },
+    { text: "空气流动，风的路线一万种。人山人海，吹不来去年春风。", author: "maojunzc" },
+    { text: "现在无法碰触的难过，终将可以当做笑话去讲。", author: "maojunzc" }
+  ];
+
+  // API列表（会按随机顺序尝试）
+  const apiEndpoints = [
+    {
+      url: 'https://v1.hitokoto.cn/',
+      parse: (data) => ({ text: data.hitokoto, author: data.from_who || data.from || 'Unknown' })
+    },
+    {
+      url: 'https://api.shadiao.pro/du',
+      parse: (data) => ({ text: data.text, author: data.from || 'Unknown' })
+    },
+    {
+      url: 'https://lbx.xiaoxiao-dashu.com/api/yiyan',
+      parse: (data) => ({ text: data.data.text, author: data.data.author || 'Unknown' })
+    }
+  ];
+
+  // 从一言API获取随机句子
+  async function getQuoteFromAPI() {
+    // 先尝试使用本地一言（优先）
+    try {
+      const response = await fetch('/api/quotes');
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.text) {
+          return {
+            text: data.text,
+            author: data.author || 'Unknown'
+          };
+        }
+      }
+    } catch (e) {
+      console.log('Using API quotes');
+    }
+
+    // 随机打乱API顺序
+    const shuffledAPIs = [...apiEndpoints].sort(() => Math.random() - 0.5);
+
+    for (const api of shuffledAPIs) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+        const response = await fetch(api.url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+
+        if (!response.ok) continue;
+
+        const data = await response.json();
+        const quote = api.parse(data);
+
+        if (quote.text && quote.text.length > 0) {
+          return quote;
+        }
+      } catch (error) {
+        console.warn(`API failed:`, error);
+        continue;
+      }
+    }
+
+    // 所有API都失败，使用备用数据
+    const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
+    return fallbackQuotes[randomIndex];
+  }
+
+  // 更新每日一言
+  async function updateDailyQuote() {
+    const quote = await getQuoteFromAPI();
+    
+    const quoteElement = document.getElementById('daily-quote');
+    const authorElement = document.getElementById('quote-author');
+    const dateElement = document.getElementById('quote-date');
+    
+    if (quoteElement) {
+      quoteElement.textContent = quote.text;
+    }
+    if (authorElement) {
+      authorElement.textContent = '— ' + quote.author;
+    }
+    if (dateElement) {
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+      dateElement.textContent = today.toLocaleDateString('zh-CN', options);
+    }
+  }
+
+  // 页面加载时更新每日一言
+  document.addEventListener('DOMContentLoaded', updateDailyQuote);
+</script>

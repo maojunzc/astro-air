@@ -1,5 +1,6 @@
 ---
 import { NoiseBackground } from "~/components/react/noise-background"
+import Stats from "~/components/astro/stats.astro"
 import { getLangFromUrl } from "~/i18n/utils"
 import { GoogleAnalytics } from "astro-google-analytics"
 import { en, zh } from "~/config"
@@ -84,7 +85,7 @@ const config = lang === "zh" ? zh : en
       is:inline
       src="https://umami.guoqi.dev/script.js"
       data-website-id="759e9e56-20d3-463b-8d6e-abba5c53128b"
-      data-domains="astro-air.guoqi.dev"></script>
+      data-domains="maojunzc.github.io"></script>
 
     {
       config.googleAnalyticsId && (
@@ -97,6 +98,7 @@ const config = lang === "zh" ? zh : en
     class="flex min-h-screen w-full justify-center px-6 md:px-0 dark:bg-[#121212] dark:text-white"
   >
     <slot />
+    <Stats />
     <NoiseBackground />
   </body>
 </html>

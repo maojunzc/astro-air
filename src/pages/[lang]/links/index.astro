@@ -7,6 +7,7 @@ import LinksContentZh from "~/config/zh/links.mdx"
 import { getLangFromUrl, useTranslations } from "~/i18n/utils"
 import MainLayout from "~/layouts/main.astro"
 import { getLanguagePaths } from "~/utils/langs"
+import Guestbook from "~/components/astro/Guestbook.astro"
 
 export function getStaticPaths() {
   return getLanguagePaths()
@@ -22,7 +23,7 @@ const pageMeta = lang === "zh" ? zh.pageMeta : en.pageMeta
   title={pageMeta.links.title}
   description={pageMeta.links.description}
   ogImage={pageMeta.links.ogImage}
-  needComment={true}
+  needComment={false}
 >
   <h3 class="my-10 text-center text-xl font-bold">{t("links.title")}</h3>
 
@@ -32,4 +33,6 @@ const pageMeta = lang === "zh" ? zh.pageMeta : en.pageMeta
   <div class="prose max-w-3xl dark:prose-invert">
     <LinksContent />
   </div>
+  
+  <Guestbook lang={lang} />
 </MainLayout>

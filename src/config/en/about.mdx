@@ -1,12 +1,21 @@
-export const title = "Hello, I'm Guoqi Sun ~"
+import DonateSection from '~/components/react/DonateSection'
 
-<h3 class="my-10 text-center text-xl font-bold">{title}</h3>
+export const title = "Welcome to maojunzc's blog"
 
-<img
-  className="block dark:hidden"
-  src="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN/profile-snake-contrib/github-contribution-grid-snake.svg"
-/>
-<img
-  className="hidden dark:block"
-  src="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN/profile-snake-contrib/github-contribution-grid-snake-dark.svg"
-/>
+<h1 class="my-10 text-center text-2xl font-bold">{title}</h1>
+
+<div class="space-y-4">
+  <p>WeChat Official Account/Mini Program: maojunzc</p>
+  <p>author: maojunzc</p>
+  <p>GitHub: <a href="https://github.com/maojunzc" class="text-blue-600 hover:underline">maojunzc</a></p>
+  <p>QQ: <a href="https://qm.qq.com/cgi-bin/qm/qr?k=xxxxx&u=2316562571" class="text-blue-600 hover:underline">2316562571</a></p>
+  <p><a href="#" class="text-blue-600 hover:underline">Meeting flowers in the rain, meeting you in the world</a></p>
+</div>
+
+<div class="my-10 flex justify-center">
+  <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+    <img src="/images/VX.jpg" alt="WeChat QR Code" class="w-64 h-auto object-contain rounded" />
+  </div>
+</div>
+
+<DonateSection lang="en" />

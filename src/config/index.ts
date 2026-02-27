@@ -3,35 +3,27 @@ import { Github, Twitter } from "lucide-react"
 export const defaultLanguage: string = "en"
 
 export const common = {
-  domain: "https://astro-air.guoqi.dev",
+  domain: "https://maojunzc.github.io",
   meta: {
     favicon: "/avatar.png",
-    url: "https://blog.sunguoqi.com",
+    url: "https://maojunzc.github.io",
   },
   googleAnalyticsId: "",
   social: [
     {
-      icon: Twitter,
-      label: "X",
-      link: "https://x.com/sun0225SUN",
-    },
-    {
       icon: Github,
       label: "GitHub",
-      link: "https://github.com/sun0225SUN",
+      link: "https://github.com/maojunzc",
     },
   ],
   rss: true,
   navigation: {
     home: true,
     archive: true,
-    custom: [
-      {
-        label: "CamLife",
-        link: "https://camlife.cn",
-      },
-    ],
+    custom: [],
     links: true,
+    reading: true,
+    plugins: true,
     about: true,
   },
   latestPosts: 8,
@@ -47,74 +39,82 @@ export const common = {
 
 export const zh = {
   ...common,
-  siteName: "小孙同学",
+  siteName: "maojunzc",
   meta: {
     ...common.meta,
-    title: "小孙同学",
-    slogan: "一个浪漫的理性主义者",
-    description: "读书、摄影、编程、旅行",
+    title: "maojunzc",
+    slogan: "不可结缘",
+    description: "技术分享、软件资源、生活记录",
   },
   navigation: {
     ...common.navigation,
-    custom: [
-      {
-        label: "影集",
-        link: "https://camlife.cn",
-      },
-    ],
   },
   pageMeta: {
     archive: {
       title: "归档",
-      description: "小孙同学的所有文章",
+      description: "maojunzc的所有文章",
       ogImage: "/images/page-meta/zh/archive.png",
     },
     links: {
       title: "朋友们",
-      description: "小孙同学的和他朋友们",
+      description: "maojunzc的朋友们",
       ogImage: "/images/page-meta/zh/links.png",
     },
     about: {
       title: "关于我",
-      description: "小孙同学的自我介绍",
+      description: "maojunzc的自我介绍",
       ogImage: "/images/page-meta/zh/about.png",
+    },
+    reading: {
+      title: "阅读",
+      description: "maojunzc的阅读列表",
+      ogImage: "/images/page-meta/zh/reading.png",
+    },
+    plugins: {
+      title: "插件",
+      description: "maojunzc的Astro博客插件",
+      ogImage: "/images/page-meta/zh/plugins.png",
     },
   },
 }
 
 export const en = {
   ...common,
-  siteName: "Guoqi Sun",
+  siteName: "maojunzc",
   meta: {
     ...common.meta,
-    title: "Guoqi Sun",
-    slogan: "A Romantic Rationalist",
-    description: "Reading, Photography, Programming, Traveling",
+    title: "maojunzc",
+    slogan: "Cannot be结缘",
+    description: "Technology sharing, software resources, life records",
   },
   navigation: {
     ...common.navigation,
-    custom: [
-      {
-        label: "CamLife",
-        link: "https://camlife.cn",
-      },
-    ],
   },
   pageMeta: {
     archive: {
       title: "All Posts",
-      description: "Here are Guoqi Sun's all posts",
+      description: "Here are maojunzc's all posts",
       ogImage: "/images/page-meta/en/archive.png",
     },
     links: {
       title: "My Friends",
-      description: "Here are Guoqi Sun's friends",
+      description: "Here are maojunzc's friends",
       ogImage: "/images/page-meta/en/links.png",
     },
     about: {
       title: "About Me",
-      description: "Here is Guoqi Sun's self-introduction",
+      description: "Here is maojunzc's self-introduction",
       ogImage: "/images/page-meta/en/about.png",
+    },
+    reading: {
+      title: "Reading",
+      description: "maojunzc's reading list",
+      ogImage: "/images/page-meta/en/reading.png",
+    },
+    plugins: {
+      title: "Plugins",
+      description: "maojunzc's Astro blog plugins",
+      ogImage: "/images/page-meta/en/plugins.png",
     },
   },
 }

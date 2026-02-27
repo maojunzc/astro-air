@@ -1,0 +1,81 @@
+---
+import { en, zh } from "~/config"
+import { getLangFromUrl } from "~/i18n/utils"
+import MainLayout from "~/layouts/main.astro"
+import { getLanguagePaths } from "~/utils/langs"
+
+// 导入书籍数据
+import books from "~/config/books.json"
+
+export function getStaticPaths() {
+  return getLanguagePaths()
+}
+
+const lang = getLangFromUrl(Astro.url)
+const pageMeta = lang === "zh" ? zh.pageMeta : en.pageMeta
+const isChinese = lang === 'zh';
+---
+
+<MainLayout
+  title={pageMeta.reading.title}
+  description={pageMeta.reading.description}
+  ogImage={pageMeta.reading.ogImage}
+  needComment={false}
+>
+  <div class="max-w-4xl mx-auto my-10">
+  <h1 class="text-3xl font-bold mb-8 text-center">{isChinese ? '阅读' : 'Reading'}</h1>
+  
+
+  
+  <!-- 书籍列表 -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {books && books.length > 0 ? (
+      books.map((book, index) => (
+        <div 
+          key={index} 
+          class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+        >
+          <a href={book.link} target="_blank" rel="noopener noreferrer" class="block">
+            <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white p-6 cursor-pointer hover:opacity-90 transition-opacity">
+              <h3 class="text-xl font-bold text-center">{book.title}</h3>
+            </div>
+          </a>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-2">{book.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{book.author}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
+              {isChinese ? book.description : book.descriptionEn || book.description}
+            </p>
+            <a 
+              href={book.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors read-button"
+            >
+              {isChinese ? '开始阅读' : 'Start Reading'}
+            </a>
+          </div>
+        </div>
+      ))
+    ) : (
+      <div class="col-span-full text-center py-10">
+        <p class="text-gray-600 dark:text-gray-400">{isChinese ? '暂无书籍数据' : 'No books data available'}</p>
+      </div>
+    )}
+  </div>
+  
+  <!-- 阅读提示 -->
+  <div class="mt-10 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+    <h3 class="text-lg font-semibold mb-2 text-blue-700 dark:text-blue-400">
+      {isChinese ? '阅读提示' : 'Reading Tips'}
+    </h3>
+    <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-2">
+      <li>{isChinese ? '点击书籍封面进入阅读' : 'Click on the book cover to start reading'}</li>
+      <li>{isChinese ? '可以通过顶部的音乐播放器控制音乐' : 'You can control music through the top music player'}</li>
+      <li>{isChinese ? '建议在安静的环境中阅读，以获得更好的阅读体验' : 'It is recommended to read in a quiet environment for a better reading experience'}</li>
+    </ul>
+  </div>
+  </div>
+  
+
+</MainLayout>

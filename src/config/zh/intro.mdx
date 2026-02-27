@@ -1,7 +1,65 @@
-<div class="flex flex-col gap-2">
-  <p>
-    🖥️ 前端小学生｜📸 摄影爱好者｜🛸 旅行探索家｜🚴 骑行蹭风选手｜🍎
-    科技产品发烧友
-  </p>
-  <p>💬 路虽远行则将至，事虽难做则必成！</p>
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-400">每日一言</h3>
+    <span class="text-sm text-gray-500 dark:text-gray-400" id="quote-date"></span>
+  </div>
+  <div class="text-center py-6">
+    <p class="text-xl italic text-gray-800 dark:text-gray-200 mb-4" id="daily-quote">
+      多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。
+    </p>
+    <p class="text-right text-gray-600 dark:text-gray-400" id="quote-author">— maojunzc</p>
+  </div>
+  <div class="flex flex-wrap gap-2 mt-4">
+    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">技术分享</span>
+    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">软件资源</span>
+    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">工具推荐</span>
+    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">生活记录</span>
+  </div>
 </div>
+
+<script type="text/javascript">
+  // 每日一言数据
+  const quotes = [
+    {
+      text: "多年前笑意，都变成秘密。听说有人曾落泪，看过街灯亮与熄。",
+      author: "— maojunzc"
+    },
+    {
+      text: "有些礼物，收下就没办法还了。发生过的，永远停在那里。",
+      author: "— maojunzc"
+    },
+    {
+      text: "人前一杯酒，各自说说笑话。人后一片海，独自翻翻夜晚。",
+      author: "— maojunzc"
+    },
+    {
+      text: "空气流动，风的路线一万种。人山人海，吹不来去年春风。",
+      author: "— maojunzc"
+    },
+    {
+      text: "现在无法碰触的难过，终将可以当做笑话去讲。",
+      author: "— maojunzc"
+    }
+  ];
+
+  // 随机获取一条一言
+  function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  }
+
+  // 更新每日一言
+  function updateDailyQuote() {
+    const quote = getRandomQuote();
+    document.getElementById('daily-quote').textContent = quote.text;
+    document.getElementById('quote-author').textContent = quote.author;
+    
+    // 更新日期
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+    document.getElementById('quote-date').textContent = today.toLocaleDateString('zh-CN', options);
+  }
+
+  // 页面加载时更新每日一言
+  document.addEventListener('DOMContentLoaded', updateDailyQuote);
+</script>

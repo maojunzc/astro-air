@@ -5,6 +5,7 @@ import AboutContentZh from "~/config/zh/about.mdx"
 import { getLangFromUrl } from "~/i18n/utils"
 import MainLayout from "~/layouts/main.astro"
 import { getLanguagePaths } from "~/utils/langs"
+import DonateButton from "~/components/astro/DonateButton.astro"
 
 export function getStaticPaths() {
   return getLanguagePaths()
@@ -23,5 +24,8 @@ const AboutContent = lang === "zh" ? AboutContentZh : AboutContentEn
 >
   <div class="prose max-w-3xl dark:prose-invert">
     <AboutContent />
+  </div>
+  <div class="my-10">
+    <DonateButton lang={lang} />
   </div>
 </MainLayout>

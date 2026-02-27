@@ -1,0 +1,130 @@
+[
+  {
+    "name": "@astrojs/mdx",
+    "author": "Astro Team",
+    "description": "Astro的官方MDX集成，用于在Astro项目中使用MDX格式。",
+    "descriptionEn": "Astro's official MDX integration for using MDX format in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/mdx",
+    "npm": "https://www.npmjs.com/package/@astrojs/mdx"
+  },
+  {
+    "name": "@astrojs/rss",
+    "author": "Astro Team",
+    "description": "Astro的官方RSS插件，用于生成网站的RSS订阅源。",
+    "descriptionEn": "Astro's official RSS plugin for generating RSS feeds for websites.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/rss",
+    "npm": "https://www.npmjs.com/package/@astrojs/rss"
+  },
+  {
+    "name": "@astrojs/sitemap",
+    "author": "Astro Team",
+    "description": "Astro的官方站点地图插件，用于生成网站的XML站点地图。",
+    "descriptionEn": "Astro's official sitemap plugin for generating XML sitemaps for websites.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/sitemap",
+    "npm": "https://www.npmjs.com/package/@astrojs/sitemap"
+  },
+  {
+    "name": "astro-reading-time",
+    "author": "Astro Community",
+    "description": "计算文章阅读时间的Astro插件。",
+    "descriptionEn": "Astro plugin for calculating article reading time.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/reading-time",
+    "npm": "https://www.npmjs.com/package/astro-reading-time"
+  },
+  {
+    "name": "astro-post-excerpt",
+    "author": "Astro Community",
+    "description": "为Astro博客文章生成摘要的插件。",
+    "descriptionEn": "Astro plugin for generating excerpts for blog posts.",
+    "github": "https://github.com/astro-community/astro-post-excerpt",
+    "npm": "https://www.npmjs.com/package/astro-post-excerpt"
+  },
+  {
+    "name": "astro-toc",
+    "author": "Astro Community",
+    "description": "为Astro文章生成目录的插件。",
+    "descriptionEn": "Astro plugin for generating table of contents for articles.",
+    "github": "https://github.com/astro-community/astro-toc",
+    "npm": "https://www.npmjs.com/package/astro-toc"
+  },
+  {
+    "name": "astro-seo-metadata",
+    "author": "Astro Community",
+    "description": "为Astro网站添加SEO元数据的插件。",
+    "descriptionEn": "Astro plugin for adding SEO metadata to websites.",
+    "github": "https://github.com/astro-community/astro-seo-metadata",
+    "npm": "https://www.npmjs.com/package/astro-seo-metadata"
+  },
+  {
+    "name": "astro-expressive-code",
+    "author": "Astro Community",
+    "description": "为Astro网站提供增强的代码块展示功能。",
+    "descriptionEn": "Astro plugin for enhanced code block display.",
+    "github": "https://github.com/astro-community/astro-expressive-code",
+    "npm": "https://www.npmjs.com/package/astro-expressive-code"
+  },
+  {
+    "name": "super-tips",
+    "author": "Astro Community",
+    "description": "为Astro网站添加提示和技巧的插件。",
+    "descriptionEn": "Astro plugin for adding tips and tricks to websites.",
+    "github": "https://github.com/astro-community/super-tips",
+    "npm": "https://www.npmjs.com/package/super-tips"
+  },
+  {
+    "name": "@jam-comments/astro",
+    "author": "Jam Comments",
+    "description": "为Astro网站添加评论功能的插件。",
+    "descriptionEn": "Astro plugin for adding comment functionality to websites.",
+    "github": "https://github.com/jam-comments/jam-comments",
+    "npm": "https://www.npmjs.com/package/@jam-comments/astro"
+  },
+  {
+    "name": "astro-embed",
+    "author": "Astro Community",
+    "description": "为Astro网站嵌入各种媒体内容的插件。",
+    "descriptionEn": "Astro plugin for embedding various media content.",
+    "github": "https://github.com/astro-community/astro-embed",
+    "npm": "https://www.npmjs.com/package/astro-embed"
+  },
+  {
+    "name": "astro-critical-css",
+    "author": "Astro Community",
+    "description": "为Astro网站生成关键CSS的插件，提高页面加载速度。",
+    "descriptionEn": "Astro plugin for generating critical CSS to improve page load speed.",
+    "github": "https://github.com/astro-community/astro-critical-css",
+    "npm": "https://www.npmjs.com/package/astro-critical-css"
+  },
+  {
+    "name": "astro-html-minifier-next",
+    "author": "Astro Community",
+    "description": "为Astro网站压缩HTML的插件。",
+    "descriptionEn": "Astro plugin for minifying HTML.",
+    "github": "https://github.com/astro-community/astro-html-minifier-next",
+    "npm": "https://www.npmjs.com/package/astro-html-minifier-next"
+  },
+  {
+    "name": "@itsmatteomanf/astro-pagefind",
+    "author": "Matteo Manfredi",
+    "description": "为Astro网站添加搜索功能的插件。",
+    "descriptionEn": "Astro plugin for adding search functionality to websites.",
+    "github": "https://github.com/itsmatteomanf/astro-pagefind",
+    "npm": "https://www.npmjs.com/package/@itsmatteomanf/astro-pagefind"
+  },
+  {
+    "name": "astro-icon",
+    "author": "Astro Community",
+    "description": "为Astro网站添加图标支持的插件。",
+    "descriptionEn": "Astro plugin for adding icon support to websites.",
+    "github": "https://github.com/astro-community/astro-icon",
+    "npm": "https://www.npmjs.com/package/astro-icon"
+  },
+  {
+    "name": "@jcayzac/astro-image-service-ng",
+    "author": "Jean-Christophe Cayzac",
+    "description": "Astro的下一代图片服务插件。",
+    "descriptionEn": "Next-generation image service plugin for Astro.",
+    "github": "https://github.com/jcayzac/astro-image-service-ng",
+    "npm": "https://www.npmjs.com/package/@jcayzac/astro-image-service-ng"
+  }
+]

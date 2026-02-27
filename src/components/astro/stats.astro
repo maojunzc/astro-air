@@ -1,0 +1,105 @@
+---
+const startTime = new Date('2024-01-01') // 博客开始运行时间
+---
+
+<div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+  <div class="flex items-center gap-2 rounded-full bg-gray-900 text-white px-4 py-2 shadow-lg">
+    <!-- 运行时间 -->
+    <div class="flex items-center gap-1">
+      <span class="text-sm">📅</span>
+      <span class="text-xs" id="run-time">计算中...</span>
+    </div>
+    
+    <div class="w-px h-4 bg-gray-700"></div>
+    
+    <!-- 访问人数 -->
+    <div class="flex items-center gap-1">
+      <span class="text-sm">👁️</span>
+      <span class="text-xs" id="visitor-count">0</span>
+    </div>
+    
+    <div class="w-px h-4 bg-gray-700"></div>
+    
+    <!-- 工具按钮 -->
+    <div class="flex items-center gap-2">
+      <a href="/zh" class="p-1 rounded-full hover:bg-gray-800 transition-colors" title="首页">
+        <span class="text-sm">🏠</span>
+      </a>
+      <a href="/zh/archive" class="p-1 rounded-full hover:bg-gray-800 transition-colors" title="归档">
+        <span class="text-sm">📁</span>
+      </a>
+      <a href="/zh/links" class="p-1 rounded-full hover:bg-gray-800 transition-colors" title="友链">
+        <span class="text-sm">🔗</span>
+      </a>
+      <a href="/zh/about" class="p-1 rounded-full hover:bg-gray-800 transition-colors" title="关于">
+        <span class="text-sm">ℹ️</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // 计算运行时间（年月日时分秒）
+  function calculateRunTime() {
+    const startTime = new Date('2024-01-01');
+    const now = new Date();
+    
+    let diff = Math.floor((now - startTime) / 1000); // 总秒数
+    
+    const years = Math.floor(diff / (365 * 24 * 60 * 60));
+    diff -= years * 365 * 24 * 60 * 60;
+    
+    const months = Math.floor(diff / (30 * 24 * 60 * 60));
+    diff -= months * 30 * 24 * 60 * 60;
+    
+    const days = Math.floor(diff / (24 * 60 * 60));
+    diff -= days * 24 * 60 * 60;
+    
+    const hours = Math.floor(diff / (60 * 60));
+    diff -= hours * 60 * 60;
+    
+    const minutes = Math.floor(diff / 60);
+    const seconds = diff % 60;
+    
+    const runTimeString = `${years}年${months}月${days}天 ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    document.getElementById('run-time').textContent = runTimeString;
+  }
+  
+  // 基于IP的访问统计
+  function updateVisitorCount() {
+    // 尝试获取用户IP（在浏览器端有限制，这里使用简化方案）
+    const getClientIP = () => {
+      // 浏览器端无法直接获取真实IP，这里使用用户代理和屏幕尺寸作为唯一标识
+      return `${navigator.userAgent}_${screen.width}x${screen.height}_${new Date().getTimezoneOffset()}`;
+    };
+    
+    const userIdentifier = getClientIP();
+    
+    // 从localStorage获取访问记录
+    let visitors = JSON.parse(localStorage.getItem('visitors') || '{}');
+    let visitCount = parseInt(localStorage.getItem('visitCount') || '0');
+    
+    // 如果是新访客，增加唯一访客数
+    if (!visitors[userIdentifier]) {
+      visitors[userIdentifier] = new Date().toISOString();
+      localStorage.setItem('visitors', JSON.stringify(visitors));
+    }
+    
+    // 增加总访问量
+    visitCount++;
+    localStorage.setItem('visitCount', visitCount.toString());
+    
+    // 计算唯一访客数
+    const uniqueVisitors = Object.keys(visitors).length;
+    
+    // 显示总访问量
+    document.getElementById('visitor-count').textContent = visitCount;
+  }
+  
+  // 初始加载时执行
+  calculateRunTime();
+  updateVisitorCount();
+  
+  // 每秒更新运行时间
+  setInterval(calculateRunTime, 1000);
+</script>
