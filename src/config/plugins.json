@@ -40,6 +40,16 @@
     "installed": false
   },
   {
+    "name": "@astrojs/solid-js",
+    "author": "Astro Team",
+    "description": "Astro的官方SolidJS集成，用于在Astro项目中使用SolidJS组件。",
+    "descriptionEn": "Astro's official SolidJS integration for using SolidJS components in Astro projects.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/solid-js",
+    "npm": "https://www.npmjs.com/package/@astrojs/solid-js",
+    "category": "前端框架",
+    "installed": false
+  },
+  {
     "name": "@astrojs/alpinejs",
     "author": "Astro Team",
     "description": "Astro的官方Alpine.js集成，用于在Astro项目中使用Alpine.js。",
@@ -96,7 +106,7 @@
     "descriptionEn": "Astro's official MDX integration for using MDX format in Astro projects.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/mdx",
     "npm": "https://www.npmjs.com/package/@astrojs/mdx",
-    "category": "其他集成",
+    "category": "内容与文档",
     "installed": true
   },
   {
@@ -106,7 +116,7 @@
     "descriptionEn": "Astro's official sitemap plugin for generating XML sitemaps for websites.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/sitemap",
     "npm": "https://www.npmjs.com/package/@astrojs/sitemap",
-    "category": "其他集成",
+    "category": "内容与文档",
     "installed": true
   },
   {
@@ -116,7 +126,7 @@
     "descriptionEn": "Astro's official Partytown integration for running third-party scripts in Web Workers.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/partytown",
     "npm": "https://www.npmjs.com/package/@astrojs/partytown",
-    "category": "其他集成",
+    "category": "样式与构建",
     "installed": false
   },
   {
@@ -126,7 +136,157 @@
     "descriptionEn": "Astro's official Markdoc integration for using Markdoc format in Astro projects.",
     "github": "https://github.com/withastro/astro/tree/main/packages/integrations/markdoc",
     "npm": "https://www.npmjs.com/package/@astrojs/markdoc",
-    "category": "其他集成",
+    "category": "内容与文档",
+    "installed": false
+  },
+  {
+    "name": "@astrojs/tailwind",
+    "author": "Astro Team",
+    "description": "Astro的官方Tailwind CSS集成，一键集成Tailwind CSS。",
+    "descriptionEn": "Astro's official Tailwind CSS integration for easy Tailwind setup.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/tailwind",
+    "npm": "https://www.npmjs.com/package/@astrojs/tailwind",
+    "category": "样式与构建",
+    "installed": true
+  },
+  {
+    "name": "astro-seo",
+    "author": "Astro Community",
+    "description": "简化SEO标签配置，支持Open Graph、Twitter Card、结构化数据。",
+    "descriptionEn": "Simplify SEO tag configuration with support for Open Graph, Twitter Card, and structured data.",
+    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/seo",
+    "npm": "https://www.npmjs.com/package/astro-seo",
+    "category": "SEO与元数据",
+    "installed": false
+  },
+  {
+    "name": "@altano/astro-opengraph",
+    "author": "Altano",
+    "description": "自动生成Open Graph图片，提升社交分享效果。",
+    "descriptionEn": "Automatically generate Open Graph images to enhance social sharing.",
+    "github": "https://github.com/altano/astro-opengraph",
+    "npm": "https://www.npmjs.com/package/@altano/astro-opengraph",
+    "category": "SEO与元数据",
+    "installed": false
+  },
+  {
+    "name": "astro-icon",
+    "author": "Astro Community",
+    "description": "集成Iconify图标库，支持本地SVG，自动内联优化。",
+    "descriptionEn": "Integrate Iconify icon library with support for local SVGs and automatic inline optimization.",
+    "github": "https://github.com/astro-community/astro-icon",
+    "npm": "https://www.npmjs.com/package/astro-icon",
+    "category": "图标与资源优化",
+    "installed": false
+  },
+  {
+    "name": "astro-fonts-next",
+    "author": "Astro Community",
+    "description": "字体优化，自动预加载、子集化，同Next.js字体方案。",
+    "descriptionEn": "Font optimization with automatic preloading, subsetting, similar to Next.js font方案.",
+    "github": "https://github.com/astro-community/astro-fonts-next",
+    "npm": "https://www.npmjs.com/package/astro-fonts-next",
+    "category": "图标与资源优化",
+    "installed": false
+  },
+  {
+    "name": "astro-expressive-code",
+    "author": "Astro Community",
+    "description": "代码高亮增强，支持VS Code主题、复制按钮、代码标注、终端样式。",
+    "descriptionEn": "Enhanced code highlighting with support for VS Code themes, copy buttons, code annotations, and terminal styles.",
+    "github": "https://github.com/expressive-code/expressive-code",
+    "npm": "https://www.npmjs.com/package/astro-expressive-code",
+    "category": "代码与内容展示",
+    "installed": true
+  },
+  {
+    "name": "astro-toc",
+    "author": "Astro Community",
+    "description": "自动生成页面目录，适配博客/文档长内容。",
+    "descriptionEn": "Automatically generate table of contents for blog posts and documentation.",
+    "github": "https://github.com/astro-community/astro-toc",
+    "npm": "https://www.npmjs.com/package/astro-toc",
+    "category": "代码与内容展示",
+    "installed": false
+  },
+  {
+    "name": "astro-critters",
+    "author": "Astro Community",
+    "description": "关键CSS内联，优化首屏渲染速度。",
+    "descriptionEn": "Critical CSS inline to optimize first screen rendering speed.",
+    "github": "https://github.com/astro-community/astro-critters",
+    "npm": "https://www.npmjs.com/package/astro-critters",
+    "category": "性能与优化",
+    "installed": false
+  },
+  {
+    "name": "astro-compress",
+    "author": "Astro Community",
+    "description": "构建时压缩HTML/CSS/JS/图片，减小打包体积。",
+    "descriptionEn": "Compress HTML/CSS/JS/images during build to reduce bundle size.",
+    "github": "https://github.com/astro-community/astro-compress",
+    "npm": "https://www.npmjs.com/package/astro-compress",
+    "category": "性能与优化",
+    "installed": false
+  },
+  {
+    "name": "sonda",
+    "author": "Astro Community",
+    "description": "打包分析工具，可视化Bundle体积，优化依赖。",
+    "descriptionEn": "Bundle analysis tool to visualize bundle size and optimize dependencies.",
+    "github": "https://github.com/withastro/sonda",
+    "npm": "https://www.npmjs.com/package/sonda",
+    "category": "性能与优化",
+    "installed": false
+  },
+  {
+    "name": "astro-auto-import",
+    "author": "Astro Community",
+    "description": "自动导入常用组件，无需手动写import。",
+    "descriptionEn": "Automatically import common components without manual import statements.",
+    "github": "https://github.com/astro-community/astro-auto-import",
+    "npm": "https://www.npmjs.com/package/astro-auto-import",
+    "category": "开发工具",
+    "installed": false
+  },
+  {
+    "name": "@swup/astro",
+    "author": "Swup Team",
+    "description": "平滑页面过渡，预加载提升导航体验。",
+    "descriptionEn": "Smooth page transitions and preloading to enhance navigation experience.",
+    "github": "https://github.com/swup/astro-plugin",
+    "npm": "https://www.npmjs.com/package/@swup/astro",
+    "category": "开发工具",
+    "installed": false
+  },
+  {
+    "name": "astro-devtool-breakpoints",
+    "author": "Astro Community",
+    "description": "开发工具栏显示当前视口断点（Tailwind类）。",
+    "descriptionEn": "Development toolbar to display current viewport breakpoints (Tailwind classes).",
+    "github": "https://github.com/astro-community/astro-devtool-breakpoints",
+    "npm": "https://www.npmjs.com/package/astro-devtool-breakpoints",
+    "category": "开发工具",
+    "installed": false
+  },
+  {
+    "name": "astro-i18nya",
+    "author": "Astro Community",
+    "description": "轻量国际化方案，多语言路由与内容管理。",
+    "descriptionEn": "Lightweight internationalization solution with multi-language routing and content management.",
+    "github": "https://github.com/astro-community/astro-i18nya",
+    "npm": "https://www.npmjs.com/package/astro-i18nya",
+    "category": "国际化与PWA",
+    "installed": false
+  },
+  {
+    "name": "vite-plugin-pwa",
+    "author": "Vite Community",
+    "description": "零配置PWA，生成Manifest与Service Worker，支持离线访问。",
+    "descriptionEn": "Zero-config PWA with manifest and service worker generation for offline access.",
+    "github": "https://github.com/vite-pwa/vite-plugin-pwa",
+    "npm": "https://www.npmjs.com/package/vite-plugin-pwa",
+    "category": "国际化与PWA",
     "installed": false
   },
   {
