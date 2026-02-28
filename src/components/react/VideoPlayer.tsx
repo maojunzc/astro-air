@@ -1,16 +1,16 @@
-import { useEffect, useRef } from 'react';
-import videojs from 'video.js';
-import 'video.js/dist/video-js.css';
+import { useEffect, useRef } from "react"
+import videojs from "video.js"
+import "video.js/dist/video-js.css"
 
 interface VideoPlayerProps {
-  src: string;
-  poster?: string;
-  controls?: boolean;
-  autoplay?: boolean;
-  muted?: boolean;
-  loop?: boolean;
-  width?: string;
-  height?: string;
+  src: string
+  poster?: string
+  controls?: boolean
+  autoplay?: boolean
+  muted?: boolean
+  loop?: boolean
+  width?: string
+  height?: string
 }
 
 const VideoPlayer = ({
@@ -20,11 +20,11 @@ const VideoPlayer = ({
   autoplay = false,
   muted = false,
   loop = false,
-  width = '100%',
-  height = 'auto'
+  width = "100%",
+  height = "auto",
 }: VideoPlayerProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const playerRef = useRef<videojs.Player | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const playerRef = useRef<videojs.Player | null>(null)
 
   useEffect(() => {
     if (videoRef.current) {
@@ -33,16 +33,16 @@ const VideoPlayer = ({
         autoplay,
         muted,
         loop,
-        poster
-      });
+        poster,
+      })
 
       return () => {
         if (playerRef.current) {
-          playerRef.current.dispose();
+          playerRef.current.dispose()
         }
-      };
+      }
     }
-  }, [controls, autoplay, muted, loop, poster]);
+  }, [controls, autoplay, muted, loop, poster])
 
   return (
     <div data-vjs-player>
@@ -56,7 +56,7 @@ const VideoPlayer = ({
         Your browser does not support the video tag.
       </video>
     </div>
-  );
-};
+  )
+}
 
-export default VideoPlayer;
+export default VideoPlayer

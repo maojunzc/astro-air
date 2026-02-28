@@ -51,7 +51,7 @@ const DonateSection = ({ lang = "zh" }: DonateSectionProps) => {
               </div>
               <div className="text-center">
                 <img
-                  src="/images/wechat-qr.jpg"
+                  src="/images/wechat-pay-qr.jpg"
                   alt={isChinese ? "微信收款码" : "WeChat QR Code"}
                   className="mb-2 h-32 w-32 rounded object-cover"
                 />
