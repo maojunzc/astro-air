@@ -42,7 +42,7 @@ const VideoPlayer = ({
         }
       }
     }
-  }, [controls, autoplay, muted, loop, poster])
+  }, [controls, autoplay, muted, loop, poster, src])
 
   return (
     <div data-vjs-player>
