@@ -58,8 +58,8 @@ export const POST: APIRoute = async ({ request }) => {
       headers: { "Content-Type": "application/json" },
     })
   } catch (error) {
-    console.error("邮件发送失败:", error)
-    return new Response(JSON.stringify({ error: "邮件发送失败" }), {
+    console.error("留言处理失败:", error)
+    return new Response(JSON.stringify({ error: "留言处理失败" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     })
