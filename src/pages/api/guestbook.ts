@@ -8,14 +8,17 @@ export const POST: APIRoute = async ({ request }) => {
     console.log("请求方法:", request.method)
     console.log("请求URL:", new URL(request.url).pathname)
     console.log("请求头:", Object.fromEntries(request.headers))
-    
+
     // 尝试从JSON获取数据
-    let name = "", email = "", website = "", message = ""
-    
+    let name = "",
+      email = "",
+      website = "",
+      message = ""
+
     try {
-      const contentType = request.headers.get('content-type')
-      
-      if (contentType?.includes('application/json')) {
+      const contentType = request.headers.get("content-type")
+
+      if (contentType?.includes("application/json")) {
         try {
           const jsonData = await request.json()
           console.log("从JSON获取数据:", jsonData)
@@ -30,7 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
             headers: { "Content-Type": "application/json" },
           })
         }
-      } else if (contentType?.includes('application/x-www-form-urlencoded')) {
+      } else if (contentType?.includes("application/x-www-form-urlencoded")) {
         try {
           const formData = await request.formData()
           console.log("从formData获取数据:", Object.fromEntries(formData))
@@ -74,7 +77,12 @@ export const POST: APIRoute = async ({ request }) => {
     const displayName = name || "匿名"
     const displayEmail = email || "未知"
 
-    console.log("处理后的留言数据:", { displayName, displayEmail, website, message })
+    console.log("处理后的留言数据:", {
+      displayName,
+      displayEmail,
+      website,
+      message,
+    })
 
     // 配置邮件发送
     if (process.env.QQ_EMAIL_PASSWORD) {

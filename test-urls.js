@@ -1,29 +1,29 @@
-import http from 'http';
-import https from 'https';
+import http from "http"
+import https from "https"
 
 // 测试URL是否可访问
 async function testUrl(url) {
   return new Promise((resolve) => {
-    const protocol = url.startsWith('https') ? https : http;
-    const options = new URL(url);
-    options.method = 'HEAD';
-    options.timeout = 5000;
+    const protocol = url.startsWith("https") ? https : http
+    const options = new URL(url)
+    options.method = "HEAD"
+    options.timeout = 5000
 
     const req = protocol.request(options, (res) => {
-      resolve({ url, status: res.statusCode, ok: res.statusCode < 400 });
-    });
+      resolve({ url, status: res.statusCode, ok: res.statusCode < 400 })
+    })
 
-    req.on('error', () => {
-      resolve({ url, status: 0, ok: false });
-    });
+    req.on("error", () => {
+      resolve({ url, status: 0, ok: false })
+    })
 
-    req.on('timeout', () => {
-      req.destroy();
-      resolve({ url, status: 0, ok: false });
-    });
+    req.on("timeout", () => {
+      req.destroy()
+      resolve({ url, status: 0, ok: false })
+    })
 
-    req.end();
-  });
+    req.end()
+  })
 }
 
 // 测试所有工具URL
@@ -74,34 +74,34 @@ async function testTools() {
     "https://www.cnnvd.org.cn",
     "https://packetstormsecurity.com",
     "https://1337day.com",
-    "https://www.toonme.com"
-  ];
+    "https://www.toonme.com",
+  ]
 
-  console.log('Testing tool URLs...');
-  const results = await Promise.all(tools.map(testUrl));
-  
-  console.log('\nTest Results:');
-  console.log('====================================');
-  
-  const unavailable = [];
-  results.forEach(result => {
-    console.log(`${result.ok ? '✓' : '✗'} ${result.url} (${result.status})`);
+  console.log("Testing tool URLs...")
+  const results = await Promise.all(tools.map(testUrl))
+
+  console.log("\nTest Results:")
+  console.log("====================================")
+
+  const unavailable = []
+  results.forEach((result) => {
+    console.log(`${result.ok ? "✓" : "✗"} ${result.url} (${result.status})`)
     if (!result.ok) {
-      unavailable.push(result.url);
+      unavailable.push(result.url)
     }
-  });
-  
-  console.log('====================================');
-  console.log(`\nTotal: ${results.length}`);
-  console.log(`Available: ${results.filter(r => r.ok).length}`);
-  console.log(`Unavailable: ${unavailable.length}`);
-  
+  })
+
+  console.log("====================================")
+  console.log(`\nTotal: ${results.length}`)
+  console.log(`Available: ${results.filter((r) => r.ok).length}`)
+  console.log(`Unavailable: ${unavailable.length}`)
+
   if (unavailable.length > 0) {
-    console.log('\nUnavailable URLs:');
-    unavailable.forEach(url => console.log(`- ${url}`));
+    console.log("\nUnavailable URLs:")
+    unavailable.forEach((url) => console.log(`- ${url}`))
   }
-  
-  return unavailable;
+
+  return unavailable
 }
 
 // 测试所有插件URL
@@ -152,54 +152,56 @@ async function testPlugins() {
     "https://github.com/withastro/astro/tree/main/packages/integrations/og-canvas",
     "https://www.npmjs.com/package/astro-og-canvas",
     "https://github.com/astro-community/astro-robots-txt",
-    "https://www.npmjs.com/package/astro-robots-txt"
-  ];
+    "https://www.npmjs.com/package/astro-robots-txt",
+  ]
 
-  console.log('\n\nTesting plugin URLs...');
-  const results = await Promise.all(plugins.map(testUrl));
-  
-  console.log('\nTest Results:');
-  console.log('====================================');
-  
-  const unavailable = [];
-  results.forEach(result => {
-    console.log(`${result.ok ? '✓' : '✗'} ${result.url} (${result.status})`);
+  console.log("\n\nTesting plugin URLs...")
+  const results = await Promise.all(plugins.map(testUrl))
+
+  console.log("\nTest Results:")
+  console.log("====================================")
+
+  const unavailable = []
+  results.forEach((result) => {
+    console.log(`${result.ok ? "✓" : "✗"} ${result.url} (${result.status})`)
     if (!result.ok) {
-      unavailable.push(result.url);
+      unavailable.push(result.url)
     }
-  });
-  
-  console.log('====================================');
-  console.log(`\nTotal: ${results.length}`);
-  console.log(`Available: ${results.filter(r => r.ok).length}`);
-  console.log(`Unavailable: ${unavailable.length}`);
-  
+  })
+
+  console.log("====================================")
+  console.log(`\nTotal: ${results.length}`)
+  console.log(`Available: ${results.filter((r) => r.ok).length}`)
+  console.log(`Unavailable: ${unavailable.length}`)
+
   if (unavailable.length > 0) {
-    console.log('\nUnavailable URLs:');
-    unavailable.forEach(url => console.log(`- ${url}`));
+    console.log("\nUnavailable URLs:")
+    unavailable.forEach((url) => console.log(`- ${url}`))
   }
-  
-  return unavailable;
+
+  return unavailable
 }
 
 // 运行测试
 async function runTests() {
-  console.log('Starting URL availability tests...');
-  console.log('====================================');
-  
-  const unavailableTools = await testTools();
-  const unavailablePlugins = await testPlugins();
-  
-  console.log('\n\nSummary:');
-  console.log('====================================');
-  console.log(`Unavailable tools: ${unavailableTools.length}`);
-  console.log(`Unavailable plugins: ${unavailablePlugins.length}`);
-  
+  console.log("Starting URL availability tests...")
+  console.log("====================================")
+
+  const unavailableTools = await testTools()
+  const unavailablePlugins = await testPlugins()
+
+  console.log("\n\nSummary:")
+  console.log("====================================")
+  console.log(`Unavailable tools: ${unavailableTools.length}`)
+  console.log(`Unavailable plugins: ${unavailablePlugins.length}`)
+
   if (unavailableTools.length > 0 || unavailablePlugins.length > 0) {
-    console.log('\nUnavailable URLs need to be removed from configuration files.');
+    console.log(
+      "\nUnavailable URLs need to be removed from configuration files.",
+    )
   } else {
-    console.log('\nAll URLs are available!');
+    console.log("\nAll URLs are available!")
   }
 }
 
-runTests().catch(console.error);
+runTests().catch(console.error)
