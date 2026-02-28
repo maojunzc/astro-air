@@ -4,40 +4,10 @@
     "categoryEn": "Common",
     "tools": [
       {
-        "name": "知乎",
-        "description": "知乎",
-        "descriptionEn": "Zhihu",
-        "url": "https://www.zhihu.com"
-      },
-      {
-        "name": "实时地球",
-        "description": "实时图像每 10 分钟更新一次，提供风暴、天气预报、降水、火警等数据",
-        "descriptionEn": "Real-time images updated every 10 minutes, providing storm, weather forecast, precipitation, fire alarm and other data",
-        "url": "https://www.realearth.io"
-      },
-      {
-        "name": "千亿像素看中国",
-        "description": "千亿像素看中国",
-        "descriptionEn": "Billions of pixels to see China",
-        "url": "https://www.1000000000000pixels.com"
-      },
-      {
-        "name": "音乐磁场",
-        "description": "原HIFINI",
-        "descriptionEn": "Former HIFINI",
-        "url": "https://www.hifini.com"
-      },
-      {
-        "name": "主机交流论坛",
-        "description": "主机交流论坛",
-        "descriptionEn": "Host exchange forum",
-        "url": "https://www.hostloc.com"
-      },
-      {
-        "name": "观影",
-        "description": "找电影",
-        "descriptionEn": "Find movies",
-        "url": "https://www.dytt8.net"
+        "name": "百度翻译",
+        "description": "百度翻译",
+        "descriptionEn": "Baidu Translate",
+        "url": "https://fanyi.baidu.com"
       }
     ]
   },
@@ -45,30 +15,6 @@
     "category": "工具类",
     "categoryEn": "Tools",
     "tools": [
-      {
-        "name": "百度翻译",
-        "description": "百度翻译",
-        "descriptionEn": "Baidu Translate",
-        "url": "https://fanyi.baidu.com"
-      },
-      {
-        "name": "星际网盘",
-        "description": "星际网盘",
-        "descriptionEn": "Interstellar Network Disk",
-        "url": "https://pan.xjbox.com"
-      },
-      {
-        "name": "星际匿名聊天",
-        "description": "星际匿名聊天",
-        "descriptionEn": "Interstellar Anonymous Chat",
-        "url": "https://chat.xjbox.com"
-      },
-      {
-        "name": "在线扒站",
-        "description": "在线扒站",
-        "descriptionEn": "Online website copying",
-        "url": "https://www.8zhan.net"
-      },
       {
         "name": "reg007",
         "description": "reg007，查询手机号注册过哪些软件",
@@ -88,34 +34,10 @@
         "url": "https://www.processon.com"
       },
       {
-        "name": "imgur",
-        "description": "无需注册,直接贴图",
-        "descriptionEn": "No registration required, directly paste images",
-        "url": "https://imgur.com"
-      },
-      {
         "name": "文本传输",
         "description": "文本代码记录,可wget",
         "descriptionEn": "Text code recording, can wget",
         "url": "https://pastebin.com"
-      },
-      {
-        "name": "在线代理",
-        "description": "虽然可以直接访问海外网站,但要记住互联网不是法外之地😡",
-        "descriptionEn": "Although you can directly access overseas websites, remember that the Internet is not a lawless place😡",
-        "url": "https://www.proxy-site.com"
-      },
-      {
-        "name": "电影大全",
-        "description": "电影大全,无广告",
-        "descriptionEn": "Movie collection, no ads",
-        "url": "https://www.dy2018.com"
-      },
-      {
-        "name": "电影迅雷下载",
-        "description": "电影迅雷下载 BTBTT",
-        "descriptionEn": "Movie Thunder download BTBTT",
-        "url": "https://www.btbtt11.com"
       },
       {
         "name": "在线游戏机",
@@ -128,12 +50,6 @@
         "description": "在线去水印(免费)",
         "descriptionEn": "Online watermark removal (free)",
         "url": "https://www.apowersoft.cn/remove-watermark-online"
-      },
-      {
-        "name": "微信文件传输",
-        "description": "微信文件传输",
-        "descriptionEn": "WeChat file transfer",
-        "url": "https://filehelper.weixin.qq.com"
       },
       {
         "name": "音乐下载",
@@ -190,18 +106,6 @@
         "url": "https://www.receivesmsonline.net"
       },
       {
-        "name": "十分钟临时邮箱",
-        "description": "临时一次性十分钟邮箱",
-        "descriptionEn": "Temporary one-time ten-minute email",
-        "url": "https://10minutemail.com"
-      },
-      {
-        "name": "whoer",
-        "description": "浏览器和IP伪装检测",
-        "descriptionEn": "Browser and IP spoofing detection",
-        "url": "https://whoer.net"
-      },
-      {
         "name": "Wi-Fi定位",
         "description": "wifi,ip,手机号地址定位",
         "descriptionEn": "wifi, ip, mobile phone number address location",
@@ -218,18 +122,6 @@
         "description": "一次性邮箱",
         "descriptionEn": "One-time email",
         "url": "https://tempmail.co"
-      },
-      {
-        "name": "网页版ssh",
-        "description": "隐藏自己,代理都省了",
-        "descriptionEn": "Hide yourself, no proxy needed",
-        "url": "https://ssh.cloud.google.com"
-      },
-      {
-        "name": "linux渗透",
-        "description": "linux常用渗透提权命令",
-        "descriptionEn": "Common Linux penetration privilege escalation commands",
-        "url": "https://www.exploit-db.com"
       },
       {
         "name": "黑客工具整理",
@@ -250,34 +142,10 @@
         "url": "https://leakix.net"
       },
       {
-        "name": "白阁文库漏洞知识库",
-        "description": "白阁文库漏洞知识库",
-        "descriptionEn": "Baige Library Vulnerability Knowledge Base",
-        "url": "https://www.baige.me"
-      },
-      {
         "name": "NOSEC漏洞信息",
         "description": "NOSEC漏洞信息",
         "descriptionEn": "NOSEC vulnerability information",
         "url": "https://www.nosec.org"
-      },
-      {
-        "name": "hacking8",
-        "description": "hacking8漏洞提权辅助",
-        "descriptionEn": "hacking8 vulnerability privilege escalation assistance",
-        "url": "https://www.hacking8.com"
-      },
-      {
-        "name": "hacking8",
-        "description": "hacking8知识库--系统提权",
-        "descriptionEn": "hacking8 knowledge base - system privilege escalation",
-        "url": "https://www.hacking8.com"
-      },
-      {
-        "name": "常见CMS漏洞",
-        "description": "hacking8知识库--常见CMS漏洞",
-        "descriptionEn": "hacking8 knowledge base - common CMS vulnerabilities",
-        "url": "https://www.hacking8.com"
       },
       {
         "name": "cnnvd",
@@ -296,18 +164,6 @@
         "description": "著名的1337day",
         "descriptionEn": "Famous 1337day",
         "url": "https://1337day.com"
-      }
-    ]
-  },
-  {
-    "category": "AI工具类",
-    "categoryEn": "AI Tools",
-    "tools": [
-      {
-        "name": "转漫画头",
-        "description": "普通照片转漫画",
-        "descriptionEn": "Convert ordinary photos to cartoons",
-        "url": "https://www.toonme.com"
       }
     ]
   }

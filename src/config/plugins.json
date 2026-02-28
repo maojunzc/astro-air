@@ -30,16 +30,6 @@
     "installed": false
   },
   {
-    "name": "@astrojs/solid-js",
-    "author": "Astro Team",
-    "description": "Astro的官方Solid.js集成，用于在Astro项目中使用Solid.js组件。",
-    "descriptionEn": "Astro's official Solid.js integration for using Solid.js components in Astro projects.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/solid-js",
-    "npm": "https://www.npmjs.com/package/@astrojs/solid-js",
-    "category": "前端框架",
-    "installed": false
-  },
-  {
     "name": "@astrojs/preact",
     "author": "Astro Team",
     "description": "Astro的官方Preact集成，用于在Astro项目中使用Preact组件。",
@@ -140,46 +130,6 @@
     "installed": false
   },
   {
-    "name": "@astrojs/db",
-    "author": "Astro Team",
-    "description": "Astro的官方数据库集成，用于在Astro项目中使用数据库。",
-    "descriptionEn": "Astro's official database integration for using databases in Astro projects.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/db",
-    "npm": "https://www.npmjs.com/package/@astrojs/db",
-    "category": "其他集成",
-    "installed": false
-  },
-  {
-    "name": "@astrojs/rss",
-    "author": "Astro Team",
-    "description": "Astro的官方RSS插件，用于生成网站的RSS订阅源。",
-    "descriptionEn": "Astro's official RSS plugin for generating RSS feeds for websites.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/rss",
-    "npm": "https://www.npmjs.com/package/@astrojs/rss",
-    "category": "其他集成",
-    "installed": true
-  },
-  {
-    "name": "astro-reading-time",
-    "author": "Astro Community",
-    "description": "计算文章阅读时间的Astro插件。",
-    "descriptionEn": "Astro plugin for calculating article reading time.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/reading-time",
-    "npm": "https://www.npmjs.com/package/astro-reading-time",
-    "category": "社区插件",
-    "installed": false
-  },
-  {
-    "name": "astro-expressive-code",
-    "author": "Astro Community",
-    "description": "为Astro网站提供增强的代码块展示功能。",
-    "descriptionEn": "Astro plugin for enhanced code block display.",
-    "github": "https://github.com/astro-community/astro-expressive-code",
-    "npm": "https://www.npmjs.com/package/astro-expressive-code",
-    "category": "社区插件",
-    "installed": true
-  },
-  {
     "name": "astro-embed",
     "author": "Astro Community",
     "description": "为Astro网站嵌入各种媒体内容的插件。",
@@ -190,43 +140,13 @@
     "installed": false
   },
   {
-    "name": "astro-icon",
-    "author": "Astro Community",
-    "description": "为Astro网站添加图标支持的插件。",
-    "descriptionEn": "Astro plugin for adding icon support to websites.",
-    "github": "https://github.com/astro-community/astro-icon",
-    "npm": "https://www.npmjs.com/package/astro-icon",
-    "category": "社区插件",
-    "installed": false
-  },
-  {
-    "name": "astro-google-analytics",
-    "author": "Astro Community",
-    "description": "为Astro网站添加Google Analytics跟踪。",
-    "descriptionEn": "Astro plugin for adding Google Analytics tracking to websites.",
-    "github": "https://github.com/astro-community/astro-google-analytics",
-    "npm": "https://www.npmjs.com/package/astro-google-analytics",
-    "category": "社区插件",
-    "installed": true
-  },
-  {
-    "name": "astro-og-canvas",
-    "author": "Astro Community",
-    "description": "为Astro网站生成Open Graph图像。",
-    "descriptionEn": "Astro plugin for generating Open Graph images for websites.",
-    "github": "https://github.com/withastro/astro/tree/main/packages/integrations/og-canvas",
-    "npm": "https://www.npmjs.com/package/astro-og-canvas",
-    "category": "社区插件",
-    "installed": true
-  },
-  {
-    "name": "astro-robots-txt",
-    "author": "Astro Community",
-    "description": "为Astro网站生成robots.txt文件。",
-    "descriptionEn": "Astro plugin for generating robots.txt files for websites.",
-    "github": "https://github.com/astro-community/astro-robots-txt",
-    "npm": "https://www.npmjs.com/package/astro-robots-txt",
-    "category": "社区插件",
+    "name": "twikoo",
+    "author": "imaegoo",
+    "description": "一个简洁、安全、免费的静态网站评论系统。",
+    "descriptionEn": "A simple, safe, and free comment system for static websites.",
+    "github": "https://github.com/twikoojs/twikoo",
+    "npm": "https://www.npmjs.com/package/twikoo",
+    "category": "评论系统",
     "installed": true
   }
 ]
